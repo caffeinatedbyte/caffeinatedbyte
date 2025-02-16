@@ -7,7 +7,7 @@ function TechStack() {
 	const { state } = useGlobalState();
 	return (
 		<div
-			className="text-white mt-[15vh] flex flex-col items-center justify-center gap-5 h-[70vh] w-full"
+			className="text-white mt-[15vh] flex flex-col items-center justify-center gap-5 h-full w-full"
 			style={{ display: state === "techstack" ? "flex" : "none" }}>
 			<div className="text-[8vw] sm:text-[6vw] lg:text-[4vw] font-bold text-center">
 				Brewing My Tech Stack

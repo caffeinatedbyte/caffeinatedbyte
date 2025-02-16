@@ -13,9 +13,9 @@ const Work = () => {
 			style={{
 				display: `${state === "work" ? "flex" : "none"}`,
 			}}
-			className="justify-center items-center mt-[10vh] h-[90vh] w-full">
-			<div className="hidden md:flex m-auto justify-center items-center">
-				<div className="flex justify-center items-center bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 h-[60vh] w-[90vw] md:w-[50vw] text-[6vw] md:text-[3vw] m-auto absolute -mt-32 font-semibold">
+			className="flex justify-center items-center mt-[10vh] h-full w-full">
+			<div className="hidden md:flex md:justify-center md:items-center m-auto justify-center items-center">
+				<div className="flex justify-center items-center bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 h-[60vh] w-[90vw] md:w-[50vw] text-[6vw] md:text-[3vw] m-auto absolute top-[16%] font-semibold">
 					Code & Coffee
 				</div>
 				<Tilt
@@ -110,16 +110,11 @@ const Work = () => {
 					</Tilt>
 				</Link>
 			</div>
-			<div className="md:hidden flex flex-col justify-center items-center">
+			<div className="md:hidden flex flex-col justify-center items-center mt-10">
 				<div className="text-center mb-8 bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 p-4 text-[6vw] font-semibold">
 					Code & Coffee
 				</div>
 				<div className="grid grid-cols-2 gap-10 p-4">
-					<div className="flex justify-center items-center bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 h-[15vh] p-4 relative">
-						<div className="absolute -top-4 right-4 bg-white shadow-lg backdrop-blur-md rounded-full px-3 py-1 text-xs font-medium tracking-wide text-black">
-							Brewing...
-						</div>
-					</div>
 					<Link
 						href="https://github.com/Abhivic000/Mentee-pro"
 						title="Mentee Pro"
@@ -171,6 +166,11 @@ const Work = () => {
 							/>
 						</div>
 					</Link>
+					<div className="flex justify-center items-center bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 h-[15vh] p-4 relative">
+						<div className="absolute -top-4 right-4 bg-white shadow-lg backdrop-blur-md rounded-full px-3 py-1 text-xs font-medium tracking-wide text-black">
+							Brewing...
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

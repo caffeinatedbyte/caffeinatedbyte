@@ -8,7 +8,7 @@ const Home: React.FC = () => {
 
 	return (
 		<div
-			className="flex flex-col md:flex-row items-center justify-center pt-[10vh] px-4 md:px-20 w-full max-w-full h-[90vh] overflow-hidden"
+			className="flex flex-col md:flex-row items-center justify-center pt-[10vh] px-4 md:px-20 w-full max-w-full h-auto overflow-hidden"
 			style={{ display: state !== "home" ? "none" : "" }}>
 			<div className="w-full md:w-[60vw] h-auto ml-0 md:ml-24 homeContent text-left">
 				<div className="flex bg-clip-text uppercase text-transparent bg-gradient-to-b from-[rgba(255,255,255,0.28)] to-[rgba(0,10,45,0.28)] select-none text-[12vw] md:text-[8vw] lg:text-[6vw] font-bold -mb-8 p-0 justify-start">

@@ -50,7 +50,7 @@ const Contact = () => {
 
 	return (
 		<div
-			className="flex flex-col justify-center items-center pt-[10vh] min-h-[80vh] px-4"
+			className="flex flex-col justify-center items-center h-full pt-[10vh] min-h-[80vh] px-4"
 			style={{ display: state === "contact" ? "flex" : "none" }}>
 			{flashMessage && (
 				<div

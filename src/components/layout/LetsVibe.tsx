@@ -53,7 +53,7 @@ const LetsVibe: React.FC = () => {
 	};
 
 	return (
-		<div className="fixed bottom-16 right-14 w-[20vw] md:w-[15vw] lg:w-[10vw] flex flex-col items-center select-none">
+		<div className="fixed bottom-16 right-14 w-[20vw] md:w-[15vw] lg:w-[10vw] flex flex-col items-center select-none -mb-10 -mr-4 md:mr-0 md:mb-0">
 			<div
 				className={`transition-transform duration-300 ${
 					isHovered ? "scale-110" : "scale-100"
@@ -70,7 +70,7 @@ const LetsVibe: React.FC = () => {
 			</div>
 			<div
 				ref={songBoxRef}
-				className={`text-white text-[2vw] md:text-[1.5vw] lg:text-[1vw] fixed h-[50vh] md:h-[60vh] lg:h-[70vh] w-[60vw] md:w-[50vw] lg:w-[40vh] border-2 border-[color(display-p3_0_0.039_0.176)] bg-[#000a2d] bottom-48 right-5 transition-transform duration-300 z-10 rounded-lg transform shadow-2xl ${
+				className={`text-white text-[2vw] bottom-28 h-auto md:text-[1.5vw] lg:text-[1vw] fixed md:h-[60vh] lg:h-[70vh] w-[60vw] md:w-[50vw] lg:w-[40vh] border-2 border-[color(display-p3_0_0.039_0.176)] bg-[#000a2d] md:bottom-48 right-5 transition-transform duration-300 z-10 rounded-lg transform shadow-2xl ${
 					isHovered ? "scale-100 opacity-100" : "scale-0 opacity-0"
 				}`}
 				style={{ transformOrigin: "bottom right" }}>
