@@ -1,9 +1,10 @@
 "use client";
 import { useGlobalState } from "@/context/GlobalStateContext";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const Contact = () => {
 	const [flashMessage, setFlashMessage] = useState<string | null>(null);
+	const formRef = useRef<HTMLFormElement>(null);
 
 	useEffect(() => {
 		if (flashMessage) {
@@ -33,8 +34,8 @@ const Contact = () => {
 			});
 			if (response.ok) {
 				setFlashMessage("Message sent successfully!");
-				if (e.currentTarget) {
-					e.currentTarget.reset();
+				if (formRef.current) {
+					formRef.current.reset();
 				}
 			} else {
 				const errorData = await response.json();
@@ -62,6 +63,7 @@ const Contact = () => {
 			<div className="text-[4vw] font-bold mb-2">Contact Me</div>
 			<div className="contactForm flex flex-col justify-center items-center gap-5 bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 h-[60vh] w-[50vw] text-[3vw]">
 				<form
+					ref={formRef}
 					className="flex flex-col justify-center items-center gap-8 w-full p-8"
 					onSubmit={handleSubmit}>
 					<div className="flex justify-start items-start gap-4 w-[80%]">
