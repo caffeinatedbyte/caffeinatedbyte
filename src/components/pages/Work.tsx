@@ -142,7 +142,7 @@ const Work = () => {
 								Part Time
 							</div>
 							<Image
-								src={"/bunchup_image.webp"}
+								src={"/Bunchup_image.webp"}
 								width={100}
 								height={100}
 								alt="Bunchup"
