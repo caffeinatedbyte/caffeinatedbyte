@@ -2,20 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	background: linear-gradient(
+		112.68deg,
+		color(display-p3 0 0 0) 0%,
+		color(display-p3 0 0.039 0.176) 100%
+	);
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
 }
