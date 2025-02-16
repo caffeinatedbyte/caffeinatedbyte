@@ -20,7 +20,7 @@ const Nav = () => {
 	return (
 		<div className="fixed top-0 px-10 py-10 h-[10vh] w-[100%] overflow-hidden flex justify-between items-center select-none z-10">
 			<Image
-				src="/Coffee_icon.png"
+				src="/Coffee_icon.webp"
 				alt="logo"
 				className="h-[5vh] w-auto cursor-pointer"
 				width={100}
