@@ -50,7 +50,7 @@ const Contact = () => {
 
 	return (
 		<div
-			className="flex flex-col justify-start items-center pt-[10vh] h-[80vh]"
+			className="flex flex-col justify-center items-center pt-[10vh] min-h-[80vh] px-4"
 			style={{ display: state === "contact" ? "flex" : "none" }}>
 			{flashMessage && (
 				<div
@@ -60,55 +60,55 @@ const Contact = () => {
 					{flashMessage}
 				</div>
 			)}
-			<div className="text-[4vw] font-bold mb-2">Contact Me</div>
-			<div className="contactForm flex flex-col justify-center items-center gap-5 bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 h-[60vh] w-[50vw] text-[3vw]">
+			<div className="text-4xl md:text-6xl font-bold mb-6">Contact Me</div>
+			<div className="contactForm flex flex-col justify-center items-center gap-5 bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 h-auto w-full md:w-[70vw] lg:w-[50vw] text-lg md:text-base mx-auto p-4 md:p-8">
 				<form
 					ref={formRef}
-					className="flex flex-col justify-center items-center gap-8 w-full p-8"
+					className="flex flex-col justify-center items-center gap-4 md:gap-8 w-full"
 					onSubmit={handleSubmit}>
-					<div className="flex justify-start items-start gap-4 w-[80%]">
+					<div className="flex flex-col md:flex-row justify-start items-start gap-4 w-full">
 						<input
 							name="firstName"
 							type="text"
 							placeholder="First Name"
 							required
 							autoFocus
-							className="w-full pt-2 border-b-2 border-white/20 bg-transparent text-[1vw] focus:outline-none focus:border-white"
+							className="w-full md:w-1/2 pt-2 border-b-2 border-white/20 bg-transparent text-xl md:text-lg focus:outline-none focus:border-white"
 						/>
 						<input
 							name="lastName"
 							type="text"
 							placeholder="Last Name"
 							required
-							className="w-full pt-2 border-b-2 border-white/20 bg-transparent text-[1vw] focus:outline-none focus:border-white"
+							className="w-full md:w-1/2 pt-2 border-b-2 border-white/20 bg-transparent text-xl md:text-lg focus:outline-none focus:border-white"
 						/>
 					</div>
-					<div className="flex justify-start items-start gap-4 w-[80%]">
+					<div className="flex flex-col md:flex-row justify-start items-start gap-4 w-full">
 						<input
 							name="email"
 							type="email"
 							placeholder="Email"
 							required
-							className="w-full pt-2 border-b-2 border-white/20 bg-transparent text-[1vw] focus:outline-none focus:border-white"
+							className="w-full md:w-1/2 pt-2 border-b-2 border-white/20 bg-transparent text-xl md:text-lg focus:outline-none focus:border-white"
 						/>
 						<input
 							name="phone"
 							type="tel"
 							placeholder="Phone"
-							className="w-full pt-2 border-b-2 border-white/20 bg-transparent text-[1vw] focus:outline-none focus:border-white"
+							className="w-full md:w-1/2 pt-2 border-b-2 border-white/20 bg-transparent text-xl md:text-lg focus:outline-none focus:border-white"
 						/>
 					</div>
-					<div className="w-[80%]">
+					<div className="w-full">
 						<textarea
 							name="message"
 							placeholder="Message"
 							required
-							className="w-full h-[20vh] p-3 border-2 border-white/20 bg-white/5 text-[1vw] resize-none focus:outline-none focus:border-white"
+							className="w-full h-[20vh] p-3 border-2 border-white/20 bg-white/5 text-xl md:text-lg resize-none focus:outline-none focus:border-white"
 						/>
 					</div>
 					<button
 						type="submit"
-						className="px-8 py-3 w-[20%] bg-white/15 hover:bg-white text-white/90 rounded-lg text-[1vw] transition-colors hover:text-black focus:outline-none">
+						className="px-8 py-3 w-full md:w-[50%] lg:w-[30%] bg-white/15 hover:bg-white text-white/90 rounded-lg text-xl md:text-lg transition-colors hover:text-black focus:outline-none">
 						Send
 					</button>
 				</form>

@@ -8,26 +8,26 @@ const Home: React.FC = () => {
 
 	return (
 		<div
-			className="flex items-center justify-center pt-[10vh] px-20 w-full max-w-full h-[90vh] overflow-hidden"
+			className="flex flex-col md:flex-row items-center justify-center pt-[10vh] px-4 md:px-20 w-full max-w-full h-[90vh] overflow-hidden"
 			style={{ display: state !== "home" ? "none" : "" }}>
-			<div className="w-[60vw] h-auto ml-24 homeContent">
-				<div className="flex bg-clip-text uppercase text-transparent bg-gradient-to-b from-[rgba(255,255,255,0.28)] to-[rgba(0,10,45,0.28)] select-none text-[12vw] font-bold -mb-8 -ml-4 p-0">
+			<div className="w-full md:w-[60vw] h-auto ml-0 md:ml-24 homeContent text-left">
+				<div className="flex bg-clip-text uppercase text-transparent bg-gradient-to-b from-[rgba(255,255,255,0.28)] to-[rgba(0,10,45,0.28)] select-none text-[12vw] md:text-[8vw] lg:text-[6vw] font-bold -mb-8 p-0 justify-start">
 					Hello
 				</div>
-				<div className="text-[3vw]">
+				<div className="text-[9vw] md:text-[4vw] mt-4 md:mt-0">
 					I&apos;m&nbsp;<span className="font-bold">Vedant Kamble</span>
 				</div>
-				<div className="text-[2.5vw]">A Caffeinated Byte</div>
-				<div className="text-[2vw] w-[60%] text-disabled">
+				<div className="text-[7vw] md:text-[3vw]">A Caffeinated Byte</div>
+				<div className="text-[5vw] md:text-[2.5vw] w-full md:w-[60%] text-disabled">
 					Full Stack Developer, Entrepreneur
 				</div>
-				<div className="flex justify-start items-center w-[50%] mt-12 gap-6">
+				<div className="flex flex-wrap justify-center md:justify-start items-center w-full md:w-[50%] mt-12 gap-6">
 					<Link href="https://github.com/caffeinatedbyte" target="_blank">
 						<Image
 							src={"/Github_icon.png"}
 							alt="Github Caffeinated Byte"
-							width={50}
-							height={50}
+							width={40}
+							height={40}
 							className="cursor-pointer"
 						/>
 					</Link>
@@ -35,8 +35,8 @@ const Home: React.FC = () => {
 						<Image
 							src={"/X_icon.png"}
 							alt="Twitter (x) Vedant Kamble"
-							width={50}
-							height={50}
+							width={40}
+							height={40}
 							className="cursor-pointer"
 						/>
 					</Link>
@@ -44,20 +44,20 @@ const Home: React.FC = () => {
 						<Image
 							src={"/Linkedin_icon.png"}
 							alt="Linkedin Vedant Kamble"
-							width={50}
-							height={50}
+							width={40}
+							height={40}
 							className="cursor-pointer"
 						/>
 					</Link>
 				</div>
 			</div>
-			<div className="flex justify-center items-center w-[40vw] homeImage">
+			<div className="flex justify-center items-center w-full md:w-[40vw] homeImage mt-8 md:mt-0">
 				<Image
 					src="/Home_image.png"
 					alt="Vedant Kamble"
-					width={500}
-					height={500}
-					className="w-[35vw] h-auto object-cover"
+					width={400}
+					height={400}
+					className="w-[80vw] md:w-[35vw] h-auto object-cover"
 				/>
 			</div>
 		</div>

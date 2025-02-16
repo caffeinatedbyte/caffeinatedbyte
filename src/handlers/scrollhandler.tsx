@@ -4,21 +4,10 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import debounce from "lodash/debounce";
 
-type Page = "home" | "about" | "techstack" | "work" | "contact";
-
-const states: Page[] = ["home", "about", "techstack", "work", "contact"];
-
-const getNextState = (current: Page, direction: "up" | "down"): Page => {
-	const index = states.indexOf(current);
-	return direction === "down"
-		? states[(index + 1) % states.length]
-		: states[(index - 1 + states.length) % states.length];
-};
-
 const ScrollHandler = () => {
 	const { setState, state } = useGlobalState() as {
-		setState: (state: Page) => void;
-		state: Page;
+		setState: (state: string) => void;
+		state: string;
 	};
 
 	const touchStartY = useRef(0);
@@ -28,7 +17,9 @@ const ScrollHandler = () => {
 			element: string,
 			from: gsap.TweenVars,
 			to: gsap.TweenVars,
-		) => gsap.fromTo(element, from, to);
+		) => {
+			await gsap.fromTo(element, from, to);
+		};
 
 		const transitionAnimations = {
 			home: {
@@ -61,128 +52,323 @@ const ScrollHandler = () => {
 			},
 			about: {
 				in: () =>
-					animateContent(
-						".aboutcontainer",
-						{ scale: 0, opacity: 0 },
-						{ scale: 1, opacity: 1, duration: 0.3 },
-					),
+					Promise.all([
+						animateContent(
+							".aboutcontainer",
+							{
+								scale: 0,
+								opacity: 0,
+							},
+							{
+								scale: 1,
+								opacity: 1,
+								duration: 0.3,
+							},
+						),
+					]),
 				out: () =>
-					animateContent(
-						".aboutcontainer",
-						{ scale: 1, opacity: 1 },
-						{ scale: 0, opacity: 0, duration: 0.3 },
-					),
+					Promise.all([
+						animateContent(
+							".aboutcontainer",
+							{
+								scale: 1,
+								opacity: 1,
+							},
+							{
+								scale: 0,
+								opacity: 0,
+								duration: 0.3,
+							},
+						),
+					]),
 			},
 			work: {
 				in: () =>
-					animateContent(
-						".workCards",
-						{ scale: 0, opacity: 0 },
-						{
-							scale: 1,
-							opacity: 1,
-							duration: 0.2,
-							stagger: { each: 0.2, from: "edges" },
-						},
-					),
+					Promise.all([
+						animateContent(
+							".workCards",
+							{
+								scale: 0,
+								opacity: 0,
+							},
+							{
+								scale: 1,
+								opacity: 1,
+								duration: 0.2,
+								stagger: {
+									each: 0.2,
+									from: "edges",
+								},
+							},
+						),
+					]),
 				out: () =>
-					animateContent(
-						".workCards",
-						{ scale: 1, opacity: 1 },
-						{
-							scale: 0,
-							opacity: 0,
-							duration: 0.3,
-							stagger: { each: 0.2, from: "edges" },
-						},
-					),
+					Promise.all([
+						animateContent(
+							".workCards",
+							{
+								scale: 1,
+								opacity: 1,
+							},
+							{
+								scale: 0,
+								opacity: 0,
+								duration: 0.3,
+								stagger: {
+									each: 0.2,
+									from: "edges",
+								},
+							},
+						),
+					]),
 			},
 			techstack: {
 				in: () =>
-					animateContent(
-						".techstack",
-						{ scale: 0, opacity: 0 },
-						{
-							scale: 1,
-							opacity: 1,
-							duration: 0.3,
-							stagger: { each: 0.1, from: "start" },
-						},
-					),
+					Promise.all([
+						animateContent(
+							".techstack",
+							{
+								scale: 0,
+								opacity: 0,
+							},
+							{
+								scale: 1,
+								opacity: 1,
+								duration: 0.3,
+								stagger: {
+									each: 0.1,
+									from: "start",
+								},
+							},
+						),
+					]),
 				out: () =>
-					animateContent(
-						".techstack",
-						{ scale: 1, opacity: 1 },
-						{
-							scale: 0,
-							opacity: 0,
-							duration: 0.2,
-							stagger: { each: 0.1, from: "start" },
-						},
-					),
+					Promise.all([
+						animateContent(
+							".techstack",
+							{
+								scale: 1,
+								opacity: 1,
+							},
+							{
+								scale: 0,
+								opacity: 0,
+								duration: 0.2,
+								stagger: {
+									each: 0.1,
+									from: "start",
+								},
+							},
+						),
+					]),
 			},
 			contact: {
 				in: () =>
-					animateContent(
-						".contactForm",
-						{ y: "-100%", scale: 0, opacity: 0 },
-						{ y: "0%", scale: 1, opacity: 1, duration: 0.4, ease: "bounce.in" },
-					),
+					Promise.all([
+						animateContent(
+							".contactForm",
+							{
+								y: "-100%",
+								scale: 0,
+								opacity: 0,
+							},
+							{
+								y: "0%",
+								scale: 1,
+								opacity: 1,
+								duration: 0.4,
+								ease: "bounce.in",
+							},
+						),
+					]),
 				out: () =>
-					animateContent(
-						".contactForm",
-						{ scale: 1, opacity: 1 },
-						{
-							scale: 0,
-							opacity: 0,
-							duration: 0.2,
-							stagger: { each: 0.1, from: "start" },
-						},
-					),
+					Promise.all([
+						animateContent(
+							".contactForm",
+							{
+								scale: 1,
+								opacity: 1,
+							},
+							{
+								scale: 0,
+								opacity: 0,
+								duration: 0.2,
+								stagger: {
+									each: 0.1,
+									from: "start",
+								},
+							},
+						),
+					]),
 			},
 		};
 
-		const handleTransition = async (direction: "up" | "down") => {
-			const nextState = getNextState(state, direction);
-			await transitionAnimations[state].out();
-			setState(nextState);
-			await transitionAnimations[nextState].in();
-		};
+		if (state === "home") {
+			transitionAnimations.home.in();
+		} else if (state === "about") {
+			transitionAnimations.home.out();
+			transitionAnimations.about.in();
+		} else if (state === "work") {
+			transitionAnimations.about.out();
+			transitionAnimations.work.in();
+		} else if (state === "techstack") {
+			transitionAnimations.work.out();
+			transitionAnimations.techstack.in();
+		} else if (state === "contact") {
+			transitionAnimations.techstack.out();
+			transitionAnimations.contact.in();
+		}
 
-		const debouncedTransition = debounce(
-			(direction: "up" | "down") => handleTransition(direction),
-			500,
-		);
-
-		const handleWheel = (event: WheelEvent) => {
+		const handleWheel = debounce(async (event: WheelEvent) => {
 			if (event.deltaY > 0) {
-				debouncedTransition("down");
+				if (state === "home") {
+					await transitionAnimations.home.out();
+					setState("about");
+					await transitionAnimations.about.in();
+				} else if (state === "about") {
+					await transitionAnimations.about.out();
+					setState("techstack");
+					await transitionAnimations.techstack.in();
+				} else if (state === "techstack") {
+					await transitionAnimations.techstack.out();
+					setState("work");
+					await transitionAnimations.work.in();
+				} else if (state === "work") {
+					await transitionAnimations.work.out();
+					setState("contact");
+					await transitionAnimations.contact.in();
+				} else if (state === "contact") {
+					await transitionAnimations.contact.out();
+					setState("home");
+					await transitionAnimations.home.in();
+				}
 			} else if (event.deltaY < 0) {
-				debouncedTransition("up");
+				if (state === "home") {
+					await transitionAnimations.home.out();
+					setState("contact");
+					await transitionAnimations.contact.in();
+				} else if (state === "about") {
+					await transitionAnimations.about.out();
+					setState("home");
+					await transitionAnimations.home.in();
+				} else if (state === "techstack") {
+					await transitionAnimations.techstack.out();
+					setState("about");
+					await transitionAnimations.about.in();
+				} else if (state === "work") {
+					await transitionAnimations.work.out();
+					setState("techstack");
+					await transitionAnimations.techstack.in();
+				} else if (state === "contact") {
+					await transitionAnimations.contact.out();
+					setState("work");
+					await transitionAnimations.work.in();
+				}
 			}
-		};
-
-		const handleKeyDown = (event: KeyboardEvent) => {
-			if (["ArrowDown", "PageDown"].includes(event.key)) {
-				debouncedTransition("down");
-			} else if (["ArrowUp", "PageUp"].includes(event.key)) {
-				debouncedTransition("up");
-			}
-		};
+		}, 500);
 
 		const handleTouchStart = (event: TouchEvent) => {
 			touchStartY.current = event.touches[0].clientY;
 		};
 
-		const handleTouchMove = (event: TouchEvent) => {
+		const handleTouchMove = debounce(async (event: TouchEvent) => {
 			const touchEndY = event.touches[0].clientY;
 			const deltaY = touchStartY.current - touchEndY;
+
 			if (deltaY > 0) {
-				debouncedTransition("down");
+				if (state === "home") {
+					await transitionAnimations.home.out();
+					setState("about");
+					await transitionAnimations.about.in();
+				} else if (state === "about") {
+					await transitionAnimations.about.out();
+					setState("techstack");
+					await transitionAnimations.techstack.in();
+				} else if (state === "techstack") {
+					await transitionAnimations.techstack.out();
+					setState("work");
+					await transitionAnimations.work.in();
+				} else if (state === "work") {
+					await transitionAnimations.work.out();
+					setState("contact");
+					await transitionAnimations.contact.in();
+				} else if (state === "contact") {
+					await transitionAnimations.contact.out();
+					setState("home");
+					await transitionAnimations.home.in();
+				}
 			} else if (deltaY < 0) {
-				debouncedTransition("up");
+				if (state === "home") {
+					await transitionAnimations.home.out();
+					setState("contact");
+					await transitionAnimations.contact.in();
+				} else if (state === "about") {
+					await transitionAnimations.about.out();
+					setState("home");
+					await transitionAnimations.home.in();
+				} else if (state === "techstack") {
+					await transitionAnimations.techstack.out();
+					setState("about");
+					await transitionAnimations.about.in();
+				} else if (state === "work") {
+					await transitionAnimations.work.out();
+					setState("techstack");
+					await transitionAnimations.techstack.in();
+				} else if (state === "contact") {
+					await transitionAnimations.contact.out();
+					setState("work");
+					await transitionAnimations.work.in();
+				}
 			}
-		};
+		}, 500);
+
+		const handleKeyDown = debounce(async (event: KeyboardEvent) => {
+			if (event.key === "ArrowDown" || event.key === "PageDown") {
+				if (state === "home") {
+					await transitionAnimations.home.out();
+					setState("about");
+					await transitionAnimations.about.in();
+				} else if (state === "about") {
+					await transitionAnimations.about.out();
+					setState("techstack");
+					await transitionAnimations.techstack.in();
+				} else if (state === "techstack") {
+					await transitionAnimations.techstack.out();
+					setState("work");
+					await transitionAnimations.work.in();
+				} else if (state === "work") {
+					await transitionAnimations.work.out();
+					setState("contact");
+					await transitionAnimations.contact.in();
+				} else if (state === "contact") {
+					await transitionAnimations.contact.out();
+					setState("home");
+					await transitionAnimations.home.in();
+				}
+			} else if (event.key === "ArrowUp" || event.key === "PageUp") {
+				if (state === "home") {
+					await transitionAnimations.home.out();
+					setState("contact");
+					await transitionAnimations.contact.in();
+				} else if (state === "about") {
+					await transitionAnimations.about.out();
+					setState("home");
+					await transitionAnimations.home.in();
+				} else if (state === "techstack") {
+					await transitionAnimations.techstack.out();
+					setState("about");
+					await transitionAnimations.about.in();
+				} else if (state === "work") {
+					await transitionAnimations.work.out();
+					setState("techstack");
+					await transitionAnimations.techstack.in();
+				} else if (state === "contact") {
+					await transitionAnimations.contact.out();
+					setState("work");
+					await transitionAnimations.work.in();
+				}
+			}
+		}, 500);
 
 		window.addEventListener("wheel", handleWheel, { passive: true });
 		window.addEventListener("touchstart", handleTouchStart, { passive: true });

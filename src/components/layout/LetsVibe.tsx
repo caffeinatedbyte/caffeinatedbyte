@@ -53,7 +53,7 @@ const LetsVibe: React.FC = () => {
 	};
 
 	return (
-		<div className="fixed bottom-16 right-14 w-[10vw] flex flex-col items-center select-none">
+		<div className="fixed bottom-16 right-14 w-[20vw] md:w-[15vw] lg:w-[10vw] flex flex-col items-center select-none">
 			<div
 				className={`transition-transform duration-300 ${
 					isHovered ? "scale-110" : "scale-100"
@@ -64,18 +64,18 @@ const LetsVibe: React.FC = () => {
 				)}
 			</div>
 			<div
-				className="text-white text-[2vw]"
+				className="text-white text-[4vw] md:text-[3vw] lg:text-[2vw]"
 				onClick={() => setIsHovered(!isHovered)}>
 				Let&apos;s Vibe
 			</div>
 			<div
 				ref={songBoxRef}
-				className={`text-white text-[1vw] fixed h-[70vh] w-[40vh] border-2 border-[color(display-p3_0_0.039_0.176)] bg-[#000a2d] bottom-48 right-5 transition-transform duration-300 z-10 rounded-lg transform shadow-2xl ${
+				className={`text-white text-[2vw] md:text-[1.5vw] lg:text-[1vw] fixed h-[50vh] md:h-[60vh] lg:h-[70vh] w-[60vw] md:w-[50vw] lg:w-[40vh] border-2 border-[color(display-p3_0_0.039_0.176)] bg-[#000a2d] bottom-48 right-5 transition-transform duration-300 z-10 rounded-lg transform shadow-2xl ${
 					isHovered ? "scale-100 opacity-100" : "scale-0 opacity-0"
 				}`}
 				style={{ transformOrigin: "bottom right" }}>
 				<div className="bg-gradient-to-r from-[#000a2d] to-[#001045] p-4 rounded-t-lg">
-					<h2 className="text-[1.5vw] text-blue-100 font-semibold flex items-center gap-2">
+					<h2 className="text-[3vw] md:text-[2vw] lg:text-[1.5vw] text-blue-100 font-semibold flex items-center gap-2">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -140,8 +140,10 @@ const MusicItem: React.FC<{
 	return (
 		<div className="flex justify-between items-center w-full p-4">
 			<div className="flex flex-col items-start gap-1">
-				<div className=" text-[1.5vw]">{song}</div>
-				<div className="text-gray-400 text-[1vw]">{artist}</div>
+				<div className="text-[3vw] md:text-[2vw] lg:text-[1.5vw]">{song}</div>
+				<div className="text-gray-400 text-[2vw] md:text-[1.5vw] lg:text-[1vw]">
+					{artist}
+				</div>
 			</div>
 			<Link href={songURL} target="_blank">
 				<button

@@ -7,10 +7,12 @@ function TechStack() {
 	const { state } = useGlobalState();
 	return (
 		<div
-			className="text-white mt-[10vh] flex flex-col items-center justify-center gap-5 h-[80vh] w-full"
+			className="text-white mt-[10vh] flex flex-col items-center justify-center gap-5 min-h-[80vh] w-full"
 			style={{ display: state === "techstack" ? "flex" : "none" }}>
-			<div className="text-[4vw] font-bold">Brewing My Tech Stack</div>
-			<div className="flex flex-wrap justify-center items-center pt-10 w-1/2">
+			<div className="text-[8vw] sm:text-[6vw] lg:text-[4vw] font-bold text-center">
+				Brewing My Tech Stack
+			</div>
+			<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 pt-10 w-full lg:w-[60vw] justify-items-center">
 				{[
 					"/Nodejs_icon.png",
 					"/Nextjs_icon.png",
@@ -32,15 +34,15 @@ export default TechStack;
 
 const CardTech = ({ title, imageURL }: { title: string; imageURL: string }) => {
 	return (
-		<div className="techstack relative w-[16vh] h-[16vh] m-8 transition-all duration-250 [perspective:500px] group mb-16">
+		<div className="techstack relative w-[30vw] h-[30vw] sm:w-[15vw] sm:h-[15vw] lg:w-[12vh] lg:h-[12vh] m-2 lg:m-4 transition-all duration-250 [perspective:500px] group mb-8">
 			<div className="absolute inset-0 z-[-1] w-full h-full rounded-[32px] transition-transform duration-250 origin-bottom-right rotate-[15deg] bg-[#292929] shadow-lg group-hover:[transform:translate3d(0,0,20px)_rotate(15deg)_rotateY(-10deg)]"></div>
-			<div className=" absolute inset-0 z-[1] w-full h-full rounded-[32px] bg-gradient-to-br from-white/15 to-white/4 backdrop-blur-[20px] transition-transform duration-250 origin-top-left flex items-center justify-center group-hover:[transform:translate3d(0,-5px,40px)_rotateX(15deg)_rotateY(10deg)] border-2 border-white/20">
+			<div className="absolute inset-0 z-[1] w-full h-full rounded-[32px] bg-gradient-to-br from-white/15 to-white/4 backdrop-blur-[20px] transition-transform duration-250 origin-top-left flex items-center justify-center group-hover:[transform:translate3d(0,-5px,40px)_rotateX(15deg)_rotateY(10deg)] border-2 border-white/20">
 				<Image
 					src={imageURL}
 					alt={title}
-					width={100}
-					height={100}
-					className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+					width={150}
+					height={150}
+					className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain p-3"
 				/>
 			</div>
 		</div>
