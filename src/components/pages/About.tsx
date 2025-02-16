@@ -10,7 +10,7 @@ const About = () => {
 			className="aboutcontainer flex flex-col md:flex-row justify-center items-center gap-10 pt-[10vh] px-5 md:px-20 h-auto md:h-[90vh] w-[90%] overflow-hidden m-auto scale-1"
 			style={{ display: state === "about" ? "flex" : "none" }}>
 			<div className="w-full md:w-[50%] h-auto flex justify-center">
-				<Image src={"/About_image.png"} alt="about" width={500} height={500} />
+				<Image src={"/About_image.webp"} alt="about" width={500} height={500} />
 			</div>
 			<div className="w-full md:w-[50%] flex flex-col justify-start items-start text-center md:text-left">
 				<div className="text-[8vw] md:text-[1.5vw] font-bold">

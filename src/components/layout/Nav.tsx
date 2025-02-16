@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useGlobalState } from "@/context/GlobalStateContext";
 
-const NavContent = () => {
+const Nav = () => {
 	const { state, setState } = useGlobalState();
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -108,10 +108,6 @@ const NavContent = () => {
 			)}
 		</div>
 	);
-};
-
-const Nav = () => {
-	return <NavContent />;
 };
 
 export default Nav;

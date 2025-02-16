@@ -14,7 +14,7 @@ const Work = () => {
 				display: `${state === "work" ? "flex" : "none"}`,
 			}}
 			className="justify-center items-center mt-[10vh] h-[90vh] w-full">
-			<div className="hidden md:block">
+			<div className="hidden md:flex m-auto justify-center items-center">
 				<div className="flex justify-center items-center bg-gradient-to-br from-white/15 to-white/4 shadow-white/5 backdrop-blur-lg rounded-lg border-2 border-white/20 h-[60vh] w-[90vw] md:w-[50vw] text-[6vw] md:text-[3vw] m-auto absolute -mt-32 font-semibold">
 					Code & Coffee
 				</div>
@@ -36,7 +36,7 @@ const Work = () => {
 							Project
 						</div>
 						<Image
-							src={"/Github_icon.png"}
+							src={"/Github_icon.webp"}
 							width={200}
 							height={200}
 							alt="Mentee Pro"
@@ -62,7 +62,7 @@ const Work = () => {
 							Project
 						</div>
 						<Image
-							src={"/Github_icon.png"}
+							src={"/Github_icon.webp"}
 							width={200}
 							height={200}
 							alt="Automobile Price Predection"
@@ -84,7 +84,7 @@ const Work = () => {
 							Part Time
 						</div>
 						<Image
-							src={"/bunchup_image.png"}
+							src={"/bunchup_image.webp"}
 							width={200}
 							height={200}
 							alt="Bunchup"
@@ -102,7 +102,7 @@ const Work = () => {
 							1 Month
 						</div>
 						<Image
-							src={"/Hands_in_technology_image.png"}
+							src={"/Hands_in_technology_image.webp"}
 							width={200}
 							height={200}
 							alt="Hands In Technology"
@@ -130,7 +130,7 @@ const Work = () => {
 								Project
 							</div>
 							<Image
-								src={"/Github_icon.png"}
+								src={"/Github_icon.webp"}
 								width={100}
 								height={100}
 								alt="Mentee Pro"
@@ -147,7 +147,7 @@ const Work = () => {
 								Part Time
 							</div>
 							<Image
-								src={"/bunchup_image.png"}
+								src={"/bunchup_image.webp"}
 								width={100}
 								height={100}
 								alt="Bunchup"
@@ -164,7 +164,7 @@ const Work = () => {
 								1 Month
 							</div>
 							<Image
-								src={"/Hands_in_technology_image.png"}
+								src={"/Hands_in_technology_image.webp"}
 								width={100}
 								height={100}
 								alt="Hands In Technology"

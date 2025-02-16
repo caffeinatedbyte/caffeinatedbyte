@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 				<div className="flex flex-wrap justify-center md:justify-start items-center w-full md:w-[50%] mt-12 gap-6">
 					<Link href="https://github.com/caffeinatedbyte" target="_blank">
 						<Image
-							src={"/Github_icon.png"}
+							src={"/Github_icon.webp"}
 							alt="Github Caffeinated Byte"
 							width={40}
 							height={40}
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
 					</Link>
 					<Link href="https://x.com/vedantkamble26" target="_blank">
 						<Image
-							src={"/X_icon.png"}
+							src={"/X_icon.webp"}
 							alt="Twitter (x) Vedant Kamble"
 							width={40}
 							height={40}
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
 					</Link>
 					<Link href="https://www.linkedin.com/in/vedantk26" target="_blank">
 						<Image
-							src={"/Linkedin_icon.png"}
+							src={"/Linkedin_icon.webp"}
 							alt="Linkedin Vedant Kamble"
 							width={40}
 							height={40}
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
 			</div>
 			<div className="flex justify-center items-center w-full md:w-[40vw] homeImage mt-8 md:mt-0">
 				<Image
-					src="/Home_image.png"
+					src="/Home_image.webp"
 					alt="Vedant Kamble"
 					width={400}
 					height={400}
