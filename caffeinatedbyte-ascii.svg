@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="370" height="370" viewBox="0 0 370 370">
+  <style>
+    /* Dark (default) */
+    .bg  { fill: #2C1E16; }
+    .brd { fill: none; stroke: #5C3A21; stroke-width: 1; }
+    .tb  { fill: #1A0D08; }
+    .tbl { stroke: #4A2E1A; stroke-width: 1; }
+    .brt { fill: #6B4A35; }
+    .stm { fill: #D98A4C; }
+    .art { fill: #B87333; }
+    .tag { fill: #7A5535; }
+    .lnk { fill: #E67E22; }
+    .p1  { fill: #2A1F1B; } .p2  { fill: #5C3A21; } .p3  { fill: #8B5A33; }
+    .p4  { fill: #B87333; } .p5  { fill: #D98A4C; } .p6  { fill: #F5B041; }
+    .p7  { fill: #F1C40F; } .p8  { fill: #E8D8C8; } .p9  { fill: #A68A78; }
+    .p10 { fill: #6B4A35; } .p11 { fill: #3D2415; }
+
+    /* Light */
+    @media (prefers-color-scheme: light) {
+      .bg  { fill: #FFF8F0; }
+      .brd { stroke: #C4956A; }
+      .tb  { fill: #F5E6D5; }
+      .tbl { stroke: #D4956A; }
+      .brt { fill: #9B7050; }
+      .stm { fill: #7B3F00; }
+      .art { fill: #6B3000; }
+      .tag { fill: #9B7050; }
+      .lnk { fill: #7B3F00; }
+      .p1  { fill: #F5F0EB; } .p2  { fill: #E8D5C0; } .p3  { fill: #D4A882; }
+      .p4  { fill: #C4956A; } .p5  { fill: #B07840; } .p6  { fill: #9B6020; }
+      .p7  { fill: #7B4500; } .p8  { fill: #5C3010; } .p9  { fill: #3D1C08; }
+      .p10 { fill: #2C1408; } .p11 { fill: #1C0C04; }
+    }
+  </style>
+
+  <!-- Background & border -->
+  <rect width="370" height="370" rx="10" class="bg"/>
+  <rect x="0.5" y="0.5" width="369" height="369" rx="10" class="brd"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="370" height="28" rx="10" class="tb"/>
+  <rect x="0" y="18" width="370" height="10" class="tb"/>
+  <line x1="0" y1="28" x2="370" y2="28" class="tbl"/>
+  <circle cx="18" cy="14" r="5" fill="#ff5f56"/>
+  <circle cx="34" cy="14" r="5" fill="#ffbd2e"/>
+  <circle cx="50" cy="14" r="5" fill="#27c93f"/>
+  <text x="185" y="18.5" class="brt" font-size="11" text-anchor="middle"
+        font-family="'Courier New', Courier, monospace">caffeinatedbyte@github: ~$ cat coffee.txt</text>
+
+  <!--
+    ASCII art layout (font-size=13, Courier New char-width=7.8px, base x=119)
+    Leading spaces removed; x adjusted per line:
+      0 spaces → x=119   1 space → x=127   2 spaces → x=135   3 spaces → x=143   4 spaces → x=150
+    Internal spaces preserved via xml:space="preserve" + Courier New fixed-width.
+  -->
+
+  <!-- Steam (animated opacity) -->
+  <text class="stm" font-size="13" font-family="'Courier New', Courier, monospace" xml:space="preserve">
+    <tspan x="150" y="70">)   )   )</tspan>
+    <tspan x="143" y="86">(   (   (</tspan>
+    <tspan x="150" y="102">)   )   )</tspan>
+    <animate attributeName="opacity" values="1;0.3;1" dur="2.6s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- ASCII coffee cup
+       Cup body (13 chars): starts at x=135 → left | at 135, right | at 135+12×7.8=228.6
+       Taper (10 chars):    starts at x=143 → \  at 143, / at 143+9×7.8=213.2
+       Saucer (15 chars):   starts at x=127 → center ≈ 185.5
+  -->
+  <text class="art" font-size="13" font-family="'Courier New', Courier, monospace" xml:space="preserve">
+    <tspan x="135" y="122">.___________.  </tspan>
+    <tspan x="135" y="138">|           |  </tspan>
+    <tspan x="135" y="154">|   ~ ~ ~   |-.</tspan>
+    <tspan x="135" y="170">|           |  )</tspan>
+    <tspan x="135" y="186">|           |-' </tspan>
+    <tspan x="135" y="202">|___________|   </tspan>
+    <tspan x="143" y="218">\________/      </tspan>
+    <tspan x="127" y="234">._____________.  </tspan>
+  </text>
+
+  <!-- URL -->
+  <text x="185" y="274" class="tag" font-size="10.5" text-anchor="middle"
+        font-family="'Courier New', Courier, monospace">~$ open</text>
+  <text x="185" y="294" class="lnk" font-size="12" text-anchor="middle"
+        font-family="'Courier New', Courier, monospace">caffeinatedbyte.com</text>
+
+  <!-- Color palette (11 dots, centered at x=184) -->
+  <rect x="97"  y="328" width="14" height="14" rx="3" class="p1"/>
+  <rect x="113" y="328" width="14" height="14" rx="3" class="p2"/>
+  <rect x="129" y="328" width="14" height="14" rx="3" class="p3"/>
+  <rect x="145" y="328" width="14" height="14" rx="3" class="p4"/>
+  <rect x="161" y="328" width="14" height="14" rx="3" class="p5"/>
+  <rect x="177" y="328" width="14" height="14" rx="3" class="p6"/>
+  <rect x="193" y="328" width="14" height="14" rx="3" class="p7"/>
+  <rect x="209" y="328" width="14" height="14" rx="3" class="p8"/>
+  <rect x="225" y="328" width="14" height="14" rx="3" class="p9"/>
+  <rect x="241" y="328" width="14" height="14" rx="3" class="p10"/>
+  <rect x="257" y="328" width="14" height="14" rx="3" class="p11"/>
+</svg>

@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="370" viewBox="0 0 580 370"
+     font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  <style>
+    .bg   { fill: #2C1E16; }
+    .brd  { fill: none; stroke: #5C3A21; stroke-width: 1; }
+    .tb   { fill: #1A0D08; }
+    .sep  { stroke: #3D2415; stroke-width: 1; }
+    .sep2 { stroke: #4A2E1A; stroke-width: 1; }
+    .brt  { fill: #6B4A35; }
+    .stm  { fill: #D98A4C; }
+    .art  { fill: #B87333; }
+    .lnkc { fill: #8B5A33; }
+    .usr  { fill: #E67E22; font-weight: bold; }
+    .at   { fill: #6B4A35; }
+    .txt  { fill: #E8D8C8; }
+    .lbl  { fill: #F5B041; font-weight: bold; }
+    .mut  { fill: #3D2415; }
+    .p1  { fill: #2A1F1B; } .p2  { fill: #5C3A21; } .p3  { fill: #8B5A33; }
+    .p4  { fill: #B87333; } .p5  { fill: #D98A4C; } .p6  { fill: #F5B041; }
+    .p7  { fill: #F1C40F; } .p8  { fill: #E8D8C8; } .p9  { fill: #A68A78; }
+    .p10 { fill: #6B4A35; } .p11 { fill: #3D2415; }
+
+    @media (prefers-color-scheme: light) {
+      .bg   { fill: #FFF8F0; }
+      .brd  { stroke: #C4956A; }
+      .tb   { fill: #F5E6D5; }
+      .sep  { stroke: #D4956A; }
+      .sep2 { stroke: #EDD8BC; }
+      .brt  { fill: #9B7050; }
+      .stm  { fill: #7B3F00; }
+      .art  { fill: #6B3000; }
+      .lnkc { fill: #9B7050; }
+      .usr  { fill: #7B3F00; }
+      .at   { fill: #C4956A; }
+      .txt  { fill: #2C1410; }
+      .lbl  { fill: #7B3F00; }
+      .mut  { fill: #C4956A; }
+      .p1  { fill: #F5F0EB; } .p2  { fill: #E8D5C0; } .p3  { fill: #D4A882; }
+      .p4  { fill: #C4956A; } .p5  { fill: #B07840; } .p6  { fill: #9B6020; }
+      .p7  { fill: #7B4500; } .p8  { fill: #5C3010; } .p9  { fill: #3D1C08; }
+      .p10 { fill: #2C1408; } .p11 { fill: #1C0C04; }
+    }
+  </style>
+
+  <!-- Background & border -->
+  <rect width="580" height="370" rx="10" class="bg"/>
+  <rect x="0.5" y="0.5" width="579" height="369" rx="10" class="brd"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="580" height="28" rx="10" class="tb"/>
+  <rect x="0" y="18" width="580" height="10" class="tb"/>
+  <line x1="0" y1="28" x2="580" y2="28" class="sep"/>
+  <circle cx="18" cy="14" r="5" fill="#ff5f56"/>
+  <circle cx="34" cy="14" r="5" fill="#ffbd2e"/>
+  <circle cx="50" cy="14" r="5" fill="#27c93f"/>
+  <text x="290" y="18.5" class="brt" font-size="11" text-anchor="middle">caffeinatedbyte@github: ~$ neofetch</text>
+
+  <!-- Column divider -->
+  <line x1="196" y1="28" x2="196" y2="370" class="sep"/>
+
+  <!-- LEFT COLUMN: ASCII Coffee Cup (same art as caffeinatedbyte-ascii.svg)
+       font-size=11, Courier New char-width=6.6px, column center=98px
+       Leading spaces removed; x offset = base + n×6.6
+       Base x=57 (for 0 leading spaces).
+         1 space  → x=64   2 spaces → x=70
+         3 spaces → x=77   4 spaces → x=83
+       Cup body (13 chars=85.8px): x=64 → left| at 64, right| at 64+12×6.6=143.2, center=103.6
+       Taper (10 chars=66px):      x=70 → \  at 70, / ends at 70+9×6.6=129.4
+       Saucer (15 chars=99px):     x=57 → center=57+7×6.6=103.2 ≈ 98
+  -->
+  <clipPath id="lc"><rect x="0" y="28" width="196" height="342"/></clipPath>
+  <g clip-path="url(#lc)">
+
+    <!-- Steam -->
+    <text class="stm" font-size="11" font-family="'Courier New', Courier, monospace" xml:space="preserve">
+      <tspan x="68" y="66">)   )   )</tspan>
+      <tspan x="62" y="80">(   (   (</tspan>
+      <tspan x="68" y="94">)   )   )</tspan>
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.6s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- ASCII cup -->
+    <text class="art" font-size="11" font-family="'Courier New', Courier, monospace" xml:space="preserve">
+      <tspan x="55" y="110">.___________.  </tspan>
+      <tspan x="55" y="124">|           |  </tspan>
+      <tspan x="55" y="138">|   ~ ~ ~   |-.</tspan>
+      <tspan x="55" y="152">|           |  )</tspan>
+      <tspan x="55" y="166">|           |-' </tspan>
+      <tspan x="55" y="180">|___________|   </tspan>
+      <tspan x="62" y="194">\________/      </tspan>
+      <tspan x="49" y="208">._____________.  </tspan>
+    </text>
+
+    <!-- URL -->
+    <text x="98" y="248" class="lnkc" font-size="11" text-anchor="middle"
+          font-family="'Courier New', Courier, monospace">caffeinatedbyte.com</text>
+
+    <!-- Mini palette -->
+    <rect x="37"  y="318" width="11" height="11" rx="2" class="p2"/>
+    <rect x="50"  y="318" width="11" height="11" rx="2" class="p3"/>
+    <rect x="63"  y="318" width="11" height="11" rx="2" class="p4"/>
+    <rect x="76"  y="318" width="11" height="11" rx="2" class="p5"/>
+    <rect x="89"  y="318" width="11" height="11" rx="2" class="p6"/>
+    <rect x="102" y="318" width="11" height="11" rx="2" class="p7"/>
+    <rect x="115" y="318" width="11" height="11" rx="2" class="p8"/>
+    <rect x="128" y="318" width="11" height="11" rx="2" class="p9"/>
+    <rect x="141" y="318" width="11" height="11" rx="2" class="p10"/>
+  </g>
+
+  <!-- RIGHT COLUMN: Info -->
+  <clipPath id="rc"><rect x="197" y="28" width="383" height="342"/></clipPath>
+  <g clip-path="url(#rc)" font-size="13">
+
+    <!-- Username -->
+    <text x="212" y="64" font-size="15">
+      <tspan class="usr">caffeinatedbyte</tspan><tspan class="at">@</tspan><tspan class="usr">github</tspan>
+    </text>
+    <line x1="212" y1="76" x2="565" y2="76" class="sep2"/>
+
+    <!-- Tech fields (28px spacing) -->
+    <text x="212" y="110" class="txt"><tspan class="lbl">Role</tspan><tspan class="mut">     : </tspan>Solution Architect</text>
+    <text x="212" y="138" class="txt"><tspan class="lbl">Backend</tspan><tspan class="mut">  : </tspan>NestJS · NodeJS · Strapi · Python</text>
+    <text x="212" y="166" class="txt"><tspan class="lbl">Frontend</tspan><tspan class="mut"> : </tspan>NextJS · TypeScript</text>
+    <text x="212" y="194" class="txt"><tspan class="lbl">Database</tspan><tspan class="mut"> : </tspan>MongoDB · OpenSearch</text>
+    <text x="212" y="222" class="txt"><tspan class="lbl">Cloud</tspan><tspan class="mut">    : </tspan>AWS</text>
+    <text x="212" y="250" class="txt"><tspan class="lbl">Interests</tspan><tspan class="mut">: </tspan>Building stuff</text>
+
+    <line x1="212" y1="270" x2="565" y2="270" class="sep"/>
+
+    <!-- Palette -->
+    <rect x="212" y="300" width="14" height="14" rx="3" class="p1"/>
+    <rect x="228" y="300" width="14" height="14" rx="3" class="p2"/>
+    <rect x="244" y="300" width="14" height="14" rx="3" class="p3"/>
+    <rect x="260" y="300" width="14" height="14" rx="3" class="p4"/>
+    <rect x="276" y="300" width="14" height="14" rx="3" class="p5"/>
+    <rect x="292" y="300" width="14" height="14" rx="3" class="p6"/>
+    <rect x="308" y="300" width="14" height="14" rx="3" class="p7"/>
+    <rect x="324" y="300" width="14" height="14" rx="3" class="p8"/>
+    <rect x="340" y="300" width="14" height="14" rx="3" class="p9"/>
+    <rect x="356" y="300" width="14" height="14" rx="3" class="p10"/>
+    <rect x="372" y="300" width="14" height="14" rx="3" class="p11"/>
+  </g>
+</svg>
